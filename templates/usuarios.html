@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Usuarios registrados</h2>
+
+{% if usuarios %}
+    <ul>
+    {% for usuario in usuarios %}
+        <li>{{ usuario.nombre }}
+            <ul>
+            {% for tarea in usuario.tareas %}
+                <li>{{ tarea }}</li>
+            {% endfor %}
+            </ul>
+            <a href="{{ url_for('agregar_tarea', usuario_id=usuario.id) }}">Agregar Tarea</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay usuarios registrados.</p>
+{% endif %}
+{% endblock %}

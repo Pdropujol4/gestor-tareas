@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Agregar una tarea para {{ usuario.nombre }}</h2>
+<form method="POST">
+    <label for="titulo">Título de la tarea:</label>
+    <input type="text" name="titulo" id="titulo" required>
+    <button type="submit">Agregar Tarea</button>
+</form>
+{% endblock %}
